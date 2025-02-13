@@ -30,6 +30,10 @@ const loadMap = () => {
             polyline_options: {
                 color: colors[index % colors.length],
             },
+            marker_options: {
+                startIcon: null,
+                endIcon: null,
+            },
         })
         .on('loaded', function (e) {
             bounds.extend(e.target.getBounds());
