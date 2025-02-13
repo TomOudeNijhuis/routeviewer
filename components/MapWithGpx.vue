@@ -89,6 +89,13 @@ const loadMap = () => {
         L.marker([52.235783, 7.751091], { icon: cpIcon }).bindPopup("CP12"),
         L.marker([52.234883, 7.734413], { icon: cpIcon }).bindPopup("CP13"),
         L.marker([52.244281, 7.702210], { icon: cpIcon }).bindPopup("CP14"),
+        L.marker([52.255773, 7.679797], { icon: cpIcon }).bindPopup("CP20"),
+        L.marker([52.287084, 7.624772], { icon: cpIcon }).bindPopup("CP21"),
+        L.marker([52.256725, 7.600458], { icon: cpIcon }).bindPopup("CP22"),
+        L.marker([52.229232, 7.535001], { icon: cpIcon }).bindPopup("CP23"),
+        L.marker([52.24348, 7.49757], { icon: cpIcon }).bindPopup("CP24"),
+        L.marker([52.230461, 7.463783], { icon: cpIcon }).bindPopup("CP25"),
+        L.marker([52.256134, 7.441456], { icon: cpIcon }).bindPopup("CP26"),
     ];
 
     const updateMarkerVisibility = () => {
