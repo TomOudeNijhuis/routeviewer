@@ -9,7 +9,7 @@ import { useNuxtApp } from '#app';
 const mapContainer = ref(null);
 const { $leaflet: L } = useNuxtApp();
 
-const gpxUrlList = ['1.gpx','2.gpx','3.gpx','4.gpx','5.gpx','6.gpx','7.gpx'];
+const gpxUrlList = ['1.gpx','2.gpx','3.gpx','4.gpx','5.gpx','6.gpx','7.gpx','8.gpx'];
 const colors = ['#FF0000', '#0000FF', '#FFFF00', '#FF00FF', '#00FFFF', '#FFA500', '#800080', '#008000', '#000000'];
 
 const loadMap = () => {
