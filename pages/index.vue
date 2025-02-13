@@ -1,7 +1,7 @@
 <template>
     <div  :class="['container', { authenticated }]">
         <img src="@/assets/logo4.svg" alt="Logo" class="logo" />
-        <h1 v-if="authenticated" class="title">TAR Route viewer</h1>
+        <h1 v-if="authenticated" class="title">Route 2025</h1>
         <div v-if="authenticated" class="map-container">
             <MapWithGpx />
         </div>
@@ -110,6 +110,14 @@ h1 {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+@media (max-width: 1024px) {
+  .authenticated .title {
+    left: auto;
+    right: 20px;
+    transform: none;
+  }
 }
 
 </style>
