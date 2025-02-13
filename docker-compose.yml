@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  routeviewer:
+    build: .
+    ports:
+      - "84:84"
+    environment:
+      NODE_ENV: production
+      PORT: 84
+      HOST: '0.0.0.0'
