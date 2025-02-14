@@ -13,4 +13,7 @@ RUN npm run build
 
 EXPOSE 84
 
+HEALTHCHECK --interval=10s --timeout=2s --start-period=15s \  
+    CMD node healthcheck.cjs
+
 CMD ["node", ".output/server/index.mjs"]

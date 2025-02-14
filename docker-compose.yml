@@ -1,5 +1,6 @@
 services:
   routeviewer:
+    restart: unless-stopped
     build: .
     ports:
       - "84:84"
@@ -7,3 +8,13 @@ services:
       NODE_ENV: production
       PORT: 84
       HOST: '0.0.0.0'
+    labels:
+      autoheal-app: true
+  
+  autoheal:
+    restart: unless-stopped
+    image: willfarrell/autoheal
+    environment:
+      - AUTOHEAL_CONTAINER_LABEL=autoheal-app
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
