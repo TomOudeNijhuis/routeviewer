@@ -101,7 +101,7 @@ const loadMap = () => {
     const updateMarkerVisibility = () => {
         const zoomLevel = map.getZoom();
         cpMarkers.forEach(marker => {
-            if (zoomLevel >= 14) {
+            if (zoomLevel >= 13) {
                 marker.addTo(map);
             } else {
                 map.removeLayer(marker);
