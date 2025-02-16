@@ -43,10 +43,10 @@ const transitionAreas = [
     { lat: 52.259490, lon: 7.003328, name: 'Finish' },
 ];
 const checkPoints = [
-    { lat: 52.222233, lon: 7.805282, name: 'CP01'},
-    { lat: 52.224454, lon: 7.813146, name: 'CP02' },
-    { lat: 52.219186, lon: 7.821847, name: 'CP03' },
-    { lat: 52.220005, lon: 7.812918, name: 'CP04' },
+    { lat: 52.222233, lon: 7.805282, name: 'CP01', hint: 'Glijbaan' },
+    { lat: 52.224454, lon: 7.813146, name: 'CP02', hint: 'Bankje'},
+    { lat: 52.219186, lon: 7.821847, name: 'CP03', hint: 'Boom' },
+    { lat: 52.220005, lon: 7.812918, name: 'CP04', hint: 'Hek links van ingang'},
     { lat: 52.217614, lon: 7.803174, name: 'CP10' },
     { lat: 52.224592, lon: 7.773718, name: 'CP11' },
     { lat: 52.235783, lon: 7.751091, name: 'CP12' },
