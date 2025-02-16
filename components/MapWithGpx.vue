@@ -33,6 +33,33 @@ var cpIcon = L.icon({
 
 const gpxUrlList = ['1.gpx','2.gpx','3.gpx','4.gpx','5.gpx','6.gpx','7.gpx','8.gpx'];
 const colors = ['#0000FF', '#FFFF00', '#FF00FF', '#00FFFF', '#FFA500', '#800080', '#008000', '#000000'];
+const checkPoints = [
+    { lat: 52.222233, lon: 7.805282, name: 'CP01'},
+    { lat: 52.224454, lon: 7.813146, name: 'CP02' },
+    { lat: 52.219186, lon: 7.821847, name: 'CP03' },
+    { lat: 52.220005, lon: 7.812918, name: 'CP04' },
+    { lat: 52.217614, lon: 7.803174, name: 'CP10' },
+    { lat: 52.224592, lon: 7.773718, name: 'CP11' },
+    { lat: 52.235783, lon: 7.751091, name: 'CP12' },
+    { lat: 52.234883, lon: 7.734413, name: 'CP13' },
+    { lat: 52.244281, lon: 7.702210, name: 'CP14' },
+    { lat: 52.255773, lon: 7.679797, name: 'CP20' },
+    { lat: 52.286597, lon: 7.622644, name: 'CP21', hint: 'Brug' },
+    { lat: 52.256888, lon: 7.600318, name: 'CP22', hint: 'Bankje'},
+    { lat: 52.250914, lon: 7.561029, name: 'CP23'},
+    { lat: 52.229205, lon: 7.535093, name: 'CP24'},
+    { lat: 52.24348, lon: 7.49757, name: 'CP25' },
+    { lat: 52.230461, lon: 7.463783, name: 'CP26', hint: 'Hek' },
+    { lat: 52.256134, lon: 7.441456, name: 'CP27' },
+    { lat: 52.316879, lon: 7.422256, name: 'CP30', hint: 'Bordje Naturschutzgebiet'},
+    { lat: 52.370295, lon: 7.354635, name: 'CP31', hint: 'Fur jeden Burger des Emslandes ein Baum'},
+    { lat: 52.328121, lon: 7.355696, name: 'CP32', hint: 'Bankje onder overkapping'},
+    { lat: 52.280999, lon: 7.317416, name: 'CP33', hint: 'Grenspaal'},
+    { lat: 52.274929, lon: 7.207907, name: 'CP34', hint: 'Kruising'},
+    { lat: 52.292696, lon: 7.235394, name: 'CP35', hint: 'Boom bij water'},
+
+
+]
 
 const loadMap = () => {
     if (!mapContainer.value || !L) return;
@@ -42,6 +69,8 @@ const loadMap = () => {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: 'TAR',
     }).addTo(map);
+
+    L.control.scale({ position: 'topright' }).addTo(map);
 
     let loadedCount = 0;
     const bounds = L.latLngBounds();
@@ -79,24 +108,18 @@ const loadMap = () => {
 
     taMarkers.forEach(marker => marker.addTo(map));
     
-    const cpMarkers = [
-        L.marker([52.222233, 7.805282], { icon: cpIcon }).bindPopup("CP01"),
-        L.marker([52.224454, 7.813146], { icon: cpIcon }).bindPopup("CP02"),
-        L.marker([52.219186, 7.821847], { icon: cpIcon }).bindPopup("CP03"),
-        L.marker([52.220005, 7.812918], { icon: cpIcon }).bindPopup("CP04"),
-        L.marker([52.217614, 7.803174], { icon: cpIcon }).bindPopup("CP10"),
-        L.marker([52.224592, 7.773718], { icon: cpIcon }).bindPopup("CP11"),
-        L.marker([52.235783, 7.751091], { icon: cpIcon }).bindPopup("CP12"),
-        L.marker([52.234883, 7.734413], { icon: cpIcon }).bindPopup("CP13"),
-        L.marker([52.244281, 7.702210], { icon: cpIcon }).bindPopup("CP14"),
-        L.marker([52.255773, 7.679797], { icon: cpIcon }).bindPopup("CP20"),
-        L.marker([52.287084, 7.624772], { icon: cpIcon }).bindPopup("CP21"),
-        L.marker([52.256725, 7.600458], { icon: cpIcon }).bindPopup("CP22"),
-        L.marker([52.229232, 7.535001], { icon: cpIcon }).bindPopup("CP23"),
-        L.marker([52.24348, 7.49757], { icon: cpIcon }).bindPopup("CP24"),
-        L.marker([52.230461, 7.463783], { icon: cpIcon }).bindPopup("CP25"),
-        L.marker([52.256134, 7.441456], { icon: cpIcon }).bindPopup("CP26"),
-    ];
+    const cpMarkers = [];
+    checkPoints.forEach(cp => {
+        const popupContent = `
+            <strong>${cp.name}</strong><br>
+            ${cp.hint ? 'hint: ' + cp.hint + '<br>' : ''}
+            <br>
+            <a href="https://www.google.com/maps?q=${cp.lat},${cp.lon}" target="_blank">Bekijk in Google Maps</a>
+        `;
+        cpMarkers.push(
+            L.marker([cp.lat, cp.lon], { icon: cpIcon }).bindPopup(popupContent)
+        );
+    });
 
     const updateMarkerVisibility = () => {
         const zoomLevel = map.getZoom();
