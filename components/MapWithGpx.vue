@@ -33,6 +33,15 @@ var cpIcon = L.icon({
 
 const gpxUrlList = ['1.gpx','2.gpx','3.gpx','4.gpx','5.gpx','6.gpx','7.gpx','8.gpx'];
 const colors = ['#0000FF', '#FFFF00', '#FF00FF', '#00FFFF', '#FFA500', '#800080', '#008000', '#000000'];
+const transitionAreas = [
+    { lat: 52.219627, lon: 7.809509, name: 'Start/TA1' },
+    { lat: 52.246669, lon: 7.695376, name: 'TA2' },
+    { lat: 52.272563, lon: 7.451520, name: 'TA3' },
+    { lat: 52.302476, lon: 7.178782, name: 'TA4' },
+    { lat: 52.310017, lon: 7.024850, name: 'TA5' },
+    { lat: 52.258945, lon: 7.015103, name: 'TA6', hint: 'Clubgebouw scouting dr. Ariensgroep' },
+    { lat: 52.259490, lon: 7.003328, name: 'Finish' },
+];
 const checkPoints = [
     { lat: 52.222233, lon: 7.805282, name: 'CP01'},
     { lat: 52.224454, lon: 7.813146, name: 'CP02' },
@@ -57,8 +66,6 @@ const checkPoints = [
     { lat: 52.280999, lon: 7.317416, name: 'CP33', hint: 'Grenspaal'},
     { lat: 52.274929, lon: 7.207907, name: 'CP34', hint: 'Kruising'},
     { lat: 52.292696, lon: 7.235394, name: 'CP35', hint: 'Boom bij water'},
-
-
 ]
 
 const loadMap = () => {
@@ -95,16 +102,18 @@ const loadMap = () => {
         })
         .addTo(map);
     });
-
-    const taMarkers = [
-        L.marker([52.219627, 7.809509], { icon: taIcon }).bindPopup("Start/TA1"),
-        L.marker([52.246669, 7.695376], { icon: taIcon }).bindPopup("TA2"),
-        L.marker([52.272563, 7.451520], { icon: taIcon }).bindPopup("TA3"),
-        L.marker([52.302476, 7.178782], { icon: taIcon }).bindPopup("TA4"),
-        L.marker([52.310017, 7.024850], { icon: taIcon }).bindPopup("TA5"),
-        L.marker([52.258945, 7.015103], { icon: taIcon }).bindPopup("TA6"),
-        L.marker([52.259490, 7.003328], { icon: taIcon }).bindPopup("Finish"),
-    ];
+    const taMarkers = [];
+    transitionAreas.forEach(cp => {
+        const popupContent = `
+            <strong>${cp.name}</strong><br>
+            ${cp.hint ? 'hint: ' + cp.hint + '<br>' : ''}
+            <br>
+            <a href="https://www.google.com/maps?q=${cp.lat},${cp.lon}" target="_blank">Bekijk in Google Maps</a>
+        `;
+        taMarkers.push(
+            L.marker([cp.lat, cp.lon], { icon: taIcon }).bindPopup(popupContent)
+        );
+    });
 
     taMarkers.forEach(marker => marker.addTo(map));
     
