@@ -52,7 +52,7 @@ const checkPoints = [
     { lat: 52.230461, lon: 7.463783, name: 'CP26', hint: 'Hek' },
     { lat: 52.256134, lon: 7.441456, name: 'CP27' },
     { lat: 52.316879, lon: 7.422256, name: 'CP30', hint: 'Bordje Naturschutzgebiet'},
-    { lat: 52.370295, lon: 7.354635, name: 'CP31', hint: 'Fur jeden Burger des Emslandes ein Baum'},
+    { lat: 52.361400, lon: 7.337984, name: 'CP31'},
     { lat: 52.328121, lon: 7.355696, name: 'CP32', hint: 'Bankje onder overkapping'},
     { lat: 52.280999, lon: 7.317416, name: 'CP33', hint: 'Grenspaal'},
     { lat: 52.274929, lon: 7.207907, name: 'CP34', hint: 'Kruising'},
