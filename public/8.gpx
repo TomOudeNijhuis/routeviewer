@@ -5,7 +5,7 @@
   xmlns="http://www.topografix.com/GPX/1/1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3">
   <trk>
-    <name>2053445499 - van De Lutte naar Losser </name>
+    <name>2059041652 - From De Lutte to Losser </name>
     <type>cycling</type>
     <trkseg>
     <trkpt lat="52.30972" lon="7.024704">
@@ -120,13 +120,13 @@
         <ele>35.2</ele>
       </trkpt><trkpt lat="52.285874" lon="7.053199">
         <ele>34.3</ele>
+      </trkpt><trkpt lat="52.285645" lon="7.052668">
+        <ele>33.9</ele>
       </trkpt><trkpt lat="52.285523" lon="7.052385">
         <ele>33.8</ele>
       </trkpt><trkpt lat="52.285333" lon="7.052005">
         <ele>33.7</ele>
       </trkpt><trkpt lat="52.285179" lon="7.051907">
-        <ele>33.7</ele>
-      </trkpt><trkpt lat="52.284821" lon="7.051757">
         <ele>33.7</ele>
       </trkpt><trkpt lat="52.284548" lon="7.051643">
         <ele>33.8</ele>
@@ -179,23 +179,37 @@
       </trkpt><trkpt lat="52.2806" lon="7.032303">
         <ele>31.1</ele>
       </trkpt><trkpt lat="52.280462" lon="7.032405">
-        <ele>31.1</ele>
+        <ele>31.2</ele>
       </trkpt><trkpt lat="52.280298" lon="7.032636">
         <ele>31.2</ele>
       </trkpt><trkpt lat="52.28016" lon="7.032974">
-        <ele>31.2</ele>
-      </trkpt><trkpt lat="52.280131" lon="7.033382">
         <ele>31.3</ele>
+      </trkpt><trkpt lat="52.280131" lon="7.033382">
+        <ele>31.5</ele>
       </trkpt><trkpt lat="52.280059" lon="7.033596">
-        <ele>31.4</ele>
+        <ele>31.6</ele>
       </trkpt><trkpt lat="52.279983" lon="7.033682">
-        <ele>31.4</ele>
+        <ele>31.6</ele>
+      </trkpt><trkpt lat="52.280063" lon="7.034088">
+        <ele>31.7</ele>
+      </trkpt><trkpt lat="52.280122" lon="7.034109">
+        <ele>31.7</ele>
+      </trkpt><trkpt lat="52.280361" lon="7.034077">
+        <ele>31.8</ele>
+      </trkpt><trkpt lat="52.280414" lon="7.034055">
+        <ele>31.9</ele>
+      </trkpt><trkpt lat="52.280361" lon="7.034077">
+        <ele>31.9</ele>
+      </trkpt><trkpt lat="52.280122" lon="7.034109">
+        <ele>31.9</ele>
+      </trkpt><trkpt lat="52.280063" lon="7.034088">
+        <ele>32</ele>
+      </trkpt><trkpt lat="52.279983" lon="7.033682">
+        <ele>32</ele>
       </trkpt><trkpt lat="52.279904" lon="7.033741">
-        <ele>31.4</ele>
+        <ele>32</ele>
       </trkpt><trkpt lat="52.279379" lon="7.033687">
-        <ele>31.7</ele>
-      </trkpt><trkpt lat="52.279366" lon="7.033694">
-        <ele>31.7</ele>
+        <ele>31.9</ele>
       </trkpt><trkpt lat="52.278808" lon="7.033988">
         <ele>31.8</ele>
       </trkpt><trkpt lat="52.27871" lon="7.034095">
@@ -278,12 +292,12 @@
         <ele>33.4</ele>
       </trkpt><trkpt lat="52.264351" lon="7.032514">
         <ele>33.3</ele>
+      </trkpt><trkpt lat="52.263982" lon="7.032023">
+        <ele>33</ele>
       </trkpt><trkpt lat="52.263675" lon="7.031614">
         <ele>32.6</ele>
       </trkpt><trkpt lat="52.263493" lon="7.031221">
         <ele>32.3</ele>
-      </trkpt><trkpt lat="52.263303" lon="7.030689">
-        <ele>32</ele>
       </trkpt><trkpt lat="52.263177" lon="7.030338">
         <ele>31.9</ele>
       </trkpt><trkpt lat="52.263016" lon="7.029862">
